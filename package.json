@@ -1,0 +1,35 @@
+{
+  "name": "minecraftserverwizard",
+  "productName": "Minecraftserverwizard",
+  "version": "1.0.0",
+  "description": "My app",
+  "license": "MIT",
+  "repository": "PixelSoftwareStudios/minecraftserverwizard",
+  "author": {
+    "name": "Who wants to know?",
+    "email": "thegreatfrontier@protonmail.ch",
+    "url": "none"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --out=dist --asar --overwrite"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "electron": "^1.6.11",
+    "electron-debug": "^1.0.0",
+    "request-promise-native": "^1.0.4"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^8.0.0"
+  }
+}

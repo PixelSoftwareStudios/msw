@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create a Minecraft Server with Minecraft Server Wizard</title>
+		<link rel="stylesheet" href="index.css">
+	</head>
+
+	<body>
+		<div class="panel" id="mainScreen">
+			<p id="welco">Minecraft Server Wizard makes it easy to create servers without the hassle</p>
+			<p id="select">Select where you want the server to go</p>
+			<input type="text" id="pathInput"></input>
+			<button id="btnChooseFolder">Choose Folder</button>
+			<!-- TODO: in production version make next step disabled -->
+			<button class="buttonNextStep" id="btnNextStep1">Next step</button>
+		</div>
+
+		<div class="panel" id="selectType">
+			<p class="select">Select what type of server you want</p>
+			<button class="buttonGoBack" id="btnGoBack1">Go back</button>
+			<div id="buttonList1">
+				<div id="divVanillaButton">
+					<button class="noFocusBtn btnType" id="btnTypeVanilla">Vanilla Minecraft</button>
+				</div>
+				<div id="divSpigotButton">
+					<button class="noFocusBtn btnType" id="btnTypeSpigot">Bukkit (Spigot)</button>
+				</div>
+
+				<div id="divForgeButton">
+					<button class="noFocusBtn btnType" id="btnTypeForge">Modded (Forge)</button>
+				</div>
+				<button class="buttonNextStep" id="btnNextStep2" disabled>Next step</button>
+			</div>
+		</div>
+		<!-- TEAMVIWEEBENW9528 -->
+		<div class="panel" id="selectVersion">
+			<p class="select selectp">Select what version of minecraft you want your server to run</p>
+			<button class="buttonGoBack" id="btnGoBack2">Go back</button>
+			<button class="buttonNextStep" id="btnNextStep3" disabled>Next step</button>
+			<select id="selVersion" autofocus>
+				<option value="mcversion" selected>Minecraft Version</option>
+				<optgroup label="1.11">
+					<option value="mc1112">1.11.2</option>
+					<option value="mc1111">1.11.1</option>
+					<option value="mc111">1.11</option>
+				</optgroup>
+				<optgroup label="1.10">
+					<option value="mc1102">1.10.2</option>
+					<option value="mc1101">1.10.1</option>
+					<option value="mc110">1.10</option>
+				</optgroup>
+				<optgroup label="1.9">
+					<option value="mc194">1.9.4</option>
+					<option value="mc192">1.9.2</option>
+					<option value="mc19">1.9</option>
+				</optgroup>
+				<optgroup label="1.8">
+					<option value="mc189">1.8.9</option>
+					<option value="mc188">1.8.8</option>
+					<option value="mc18">1.8</option>
+				</optgroup>
+				<optgroup label="1.7">
+					<option value="mc1710">1.7.10</option>
+					<option value="mc174">1.7.4</option>
+					<option value="mc172">1.7.2</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<div class="panel" id="selectPlugins">
+			<p class="select selectp">Select the plugins you want to download, or download them later</p>
+			<button class="buttonGoBack" id="btnGoBack4">Go back</button>
+			<button class="buttonNextStep" id="btnNextStep5">Next step</button>
+			<div class="noScrollbarDiv tableContainer" id="pluginTableContainer">
+				<table class="table" id="pluginTable">
+					<tr>
+						<th>Plugins</th><button id="selectAll">Select all</button>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+
+						<td>Essentials<input id="checkBoxE" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+
+						<td>EssentialsChat<input id="checkBoxEC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>WorldEdit<input id="checkBoxWE" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11-->
+						<td>Fast Async WorldEdit<input id="checkBoxFAWE" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>WorldGuard<input id="checkBoxWG" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>PermissionsEx<input id="checkBoxPEX" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>SimpleBackup<input id="checkBoxSB" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>ChatColor2<input id="checkBoxCC2" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>Chairs<input id="checkBoxC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>SuperVanish<input id="checkBoxSV" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>ProtocolLib<input id="checkBoxPL" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>EndlessEnchant<input id="checkBoxEE" type="checkbox"></input></td>
+					</tr>
+					</tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>MobStacker<input id="checkBoxMS" type="checkbox"></input></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="panel" id="selectMods">
+			<p class="select selectp">Select the plugins you want to download, or download them later</p>
+			<button class="buttonGoBack" id="btnGoBack5">Go back</button>
+			<button class="buttonNextStep" id="btnNextStep6">Next step</button>
+			<div class="noScrollbarDiv tableContainer" id="modTableContainer">
+				<table class="table" id="modTable">
+					<tr>
+						<th>Mods</th><button id="selectAllMods">Select all</button>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>WorldEdit<input id="checkBoxFWE" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 -->
+						<td>Crayfish's Furniture Mod<input id="checkBoxCFM" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<td>ColorChat<input id="checkBoxFCC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<td>LuckyBlocks<input id="checkBoxLB" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<td>BuildingBricks<input id="checkBoxBB" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.9 - 1.11 -->
+						<td>Vazkii's Quark Mod<input id="checkBoxVQM" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>VeinMiner<input id="checkBoxVM" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>BuildCraft<input id="checkBoxBC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11-->
+						<td>IronChests<input id="checkBoxIC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>Pam's HarvestCraft<input id="checkBoxPHC" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>FlansMod<input id="checkBoxFM" type="checkbox"></input></td>
+					</tr>
+					<tr>
+						<!-- Works on 1.7 - 1.11 NEEDS TESTING -->
+						<td>Pixelmon<input id="checkBoxPM" type="checkbox"></input></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="panel" id="confirmation">
+			<p class="select selectp">Are you sure you want to create this server?</p>
+			<table id="specsTable">
+				<tr class="trcon">
+					<th class="thcon">Server Location</th>
+					<th class="thcon">Server Type</th>
+					<th class="thcon">Server Version</th>
+					<th id="thdynamic" class="thcon"></th>
+				</tr>
+				<tr class="trcon">
+					<td class="tdcon" id="tdServerLocation"><div class="noScrollbarDiv" id="dynamicScrollLocationDiv"></div></td>
+					<td class="tdcon" id="tdServerType"></td>
+					<td class="tdcon" id="tdServerVersion"></td>
+					<td id="tddynamic" class="tdcon"><div class="noScrollbarDiv" id="dynamicScrollDiv"></div></td>
+				</tr>
+			</table>
+
+			<button class="buttonGoBack" id="btnGoBack3">Go back</button>
+			<button class="buttonNextStep" id="btnNextStep4">Next step</button>
+		</div>
+
+		<div class="panel" id="creatingServer">
+			<p class="select selectp">Creating the server now</p>
+
+			<label id="logLabel" for="log">Log:</label>
+			<div id="log">
+
+			</div>
+		</div>
+		<script src="mwizard.js"></script>
+	</body>
+</html>
